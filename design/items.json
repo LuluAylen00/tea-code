@@ -1,0 +1,367 @@
+[
+    {
+        "id": 0,
+        "name": "Pokeball",
+        "price": 200,
+        "description": "Dispositivo con diseño capsular que atrapa Pokemon salvajes. Se lanza como una bola contra el blanco",
+        "category": "Captura",
+        "icon": "pokeball.png"
+    },{
+        "id": 1,
+        "name": "Superball",
+        "price": 600,
+        "description": "Pokeball de alto rendimiento. Tiene un índice de éxito superior al de la Pokeball",
+        "category": "Captura",
+        "icon": "superball.png"
+    },{
+        "id": 2,
+        "name": "Pocion",
+        "price": 200,
+        "description": "Medicina en spray que cura heridas y restaura 20PS a un Pokemon",
+        "category": "Botiquin",
+        "icon": "potion.png"
+    },{
+        "id": 3,
+        "name": "Superpocion",
+        "price": 500,
+        "description": "Medicina en spray que cura heridas y restaura 60PS a un Pokemon",
+        "category": "Botiquin",
+        "icon": "superpotion.png"
+    },{
+        "id": 4,
+        "name": "Revivir",
+        "price": 750,
+        "description": "Medicina que reanima a un Pokemon debilitado y restaura la mitas de sus PS maximos",
+        "category": "Botiquin",
+        "icon": "revive.png"
+    },{
+        "id": 5,
+        "name": "Antidoto",
+        "price": 200,
+        "description": "Medicina en spray que contrarresta los efectos del veneno en un Pokemon",
+        "category": "Botiquin",
+        "icon": "antidote.png"
+    },{
+        "id": 6,
+        "name": "Antiparaliz",
+        "price": 300,
+        "description": "Medicina en spray que cura un Pokemon paralizado",
+        "category": "Botiquin",
+        "icon": "paralyzeheal.png"
+    },{
+        "id": 7,
+        "name": "Despertar",
+        "price": 300,
+        "description": "Medicina en spray que libera un Pokemon de las garras del sueño",
+        "category": "Botiquin",
+        "icon": "awakening.png"
+    },{
+        "id": 8,
+        "name": "Antiquemar",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 9,
+        "name": "Antihielo",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 10,
+        "name": "Cuerda Huida",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 11,
+        "name": "Repelente",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 12,
+        "name": "Superrepel",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 13,
+        "name": "Poke Muñeco",
+        "price": 300,
+        "description": "Un muñeco que atrae a los Pokemon. Es útil para huir de un combate contra un Pokemon salvaje",
+        "category": "Objetos",
+        "icon": ""
+    },{
+        "id": 14,
+        "name": "Carta Retro",
+        "price": 50,
+        "description": "Carta con las imagenes de tres Pokemon muy monos. Debe llevarla un Pokemon",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Piedra Fuego",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Piedratrueno",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Piedra Agua",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Piedra Hoja",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Ataque X",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Especial X",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Directo",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Defensa X",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Def. Esp. X",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Protec. Esp.",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Velocidad X",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Precision X",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Agua Fresca",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Refresco",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Limonada",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Ultraball",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Hiperpocion",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Max. Repel",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Acopio Ball",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Turno Ball",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Leche Mu-mu",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Galleta Lava",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Carta Ola",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Carta Iman",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Cola Skitty",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Incie. Raro",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Incie. Mar.",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Inc. Floral",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Incie. Aqua",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Incie. Roca",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Incie. Puro",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Incie. Duplo",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Incie. Suave",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Incie. Lento",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Nido Ball",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "Lujo Ball",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    },{
+        "id": 15,
+        "name": "",
+        "price": 0,
+        "description": "",
+        "category": "",
+        "icon": ""
+    }
+]

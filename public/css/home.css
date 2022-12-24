@@ -1,0 +1,160 @@
+.dn {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+main {
+    display: flex;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+section.editor-container {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(44, 0, 0);
+    color: snow;
+    display: flex;
+    flex-direction: column;
+}
+
+div.editor-header {
+    margin-bottom: 5px;
+    height: 7%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 15px 0 15px;
+    background-color: rgb(11, 0, 0);
+    border-bottom: 1px solid rgb(99, 0, 0);
+}
+
+div.editor-header label {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+
+div.editors {
+    height: 95%;
+    max-height: 95%;
+    overflow-y: auto;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(99, 0, 0);
+}
+
+.editor-nav, .adder-nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 1px;
+}
+
+div.editors textarea {
+    tab-size: 4;
+    resize: none;
+    width: 96%;
+    padding: 10px 10px 10px 20px;
+    color: snow;
+    background-color: rgb(11, 0, 0);
+    border-radius: 0;
+    outline: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+iframe {
+    width: 50%;
+    background-color: snow;
+}
+
+div.editor-footer {
+    padding: 5px;
+    background-color: rgb(11,0,0);
+}
+
+input#html-selected:checked ~ div.editors textarea#css-editor,
+input#html-selected:checked ~ div.editors textarea#js-editor,
+input#html-selected:checked ~ div.editors textarea#script-editor,
+input#html-selected:checked ~ div.editors textarea#link-editor { display: none; }
+input#html-selected:checked ~ div.editors textarea#html-editor{ display: flex; }
+
+input#css-selected:checked ~ div.editors textarea#html-editor,
+input#css-selected:checked ~ div.editors textarea#js-editor,
+input#css-selected:checked ~ div.editors textarea#script-editor,
+input#css-selected:checked ~ div.editors textarea#link-editor { display: none; }
+input#css-selected:checked ~ div.editors textarea#css-editor{ display: flex; }
+
+input#js-selected:checked ~ div.editors textarea#css-editor,
+input#js-selected:checked ~ div.editors textarea#html-editor,
+input#js-selected:checked ~ div.editors textarea#script-editor,
+input#js-selected:checked ~ div.editors textarea#link-editor { display: none; }
+input#js-selected:checked ~ div.editors textarea#js-editor{ display: flex; }
+
+input#link-selected:checked ~ div.editors textarea#css-editor,
+input#link-selected:checked ~ div.editors textarea#js-editor,
+input#link-selected:checked ~ div.editors textarea#script-editor,
+input#link-selected:checked ~ div.editors textarea#html-editor { display: none; }
+input#link-selected:checked ~ div.editors textarea#link-editor{ display: flex; }
+
+input#script-selected:checked ~ div.editors textarea#css-editor,
+input#script-selected:checked ~ div.editors textarea#js-editor,
+input#script-selected:checked ~ div.editors textarea#html-editor,
+input#script-selected:checked ~ div.editors textarea#link-editor { display: none; }
+input#script-selected:checked ~ div.editors textarea#script-editor{ display: flex; }
+
+input#html-selected:checked ~ div.editor-header label[for="html-selected"],
+input#css-selected:checked ~ div.editor-header label[for="css-selected"],
+input#js-selected:checked ~ div.editor-header label[for="js-selected"],
+input#script-selected:checked ~ div.editor-header label[for="script-selected"],
+input#link-selected:checked ~ div.editor-header label[for="link-selected"]
+{ 
+    background-color: rgb(44, 0, 0); 
+    border: 1px solid rgb(99, 0, 0);
+    border-bottom: 0;
+    border-radius: 10px 10px 0 0;
+}
+
+
+#info-cont {
+    position: relative;
+}
+
+#info-cont span {
+    position: absolute;
+    bottom: 100%;
+    width: 200px;
+    background-color: #fffafad4;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px red;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+#info-cont i.fa-info-circle:hover ~ span {
+    z-index: 1;
+    opacity: 1;
+}
+
