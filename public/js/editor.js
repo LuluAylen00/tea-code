@@ -22,6 +22,7 @@ window.addEventListener("load", () => {
     let htmlEditor = document.getElementById("html-editor");
     let cssEditor = document.getElementById("css-editor");
     let jsEditor = document.getElementById("js-editor");
+    let runJs = document.getElementById("run-js");
     let scriptEditor = document.getElementById("script-editor");
     let linkEditor = document.getElementById("link-editor");
     let resultsIframe = document.getElementById("results");
@@ -107,8 +108,11 @@ window.addEventListener("load", () => {
         tags[type] = value;
         // console.log("tags",tags);
         sessionStorage.setItem("html", JSON.stringify(tags));
-
+console.log(type);
         Object.values(tags).forEach((tag,i) => {
+            if (tag == "script" && type=="js") {
+                scriptEditor.value = tag;
+            }
             //console.log(nameTags[i]);
             switch (nameTags[i]){
                 case "css":
@@ -123,9 +127,9 @@ window.addEventListener("load", () => {
                 case "html":
                     htmlEditor.value = tag;
                     break;
-                case "js":
-                    jsEditor.value = tag;
-                    break;
+                // case "js":
+                //     jsEditor.value = tag;
+                //     break;
             }
         });
         
@@ -167,7 +171,7 @@ window.addEventListener("load", () => {
         render("html", htmlEditor.value);
         htmlEditor.selectionStart = htmlEditor.selectionEnd = selection;
     })
-    jsEditor.addEventListener("input", (e) => {
+    runJs.addEventListener("click", (e) => {
         let selection = jsEditor.selectionStart;
         render("js", jsEditor.value);
         jsEditor.selectionStart = jsEditor.selectionEnd = selection;

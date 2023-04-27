@@ -88,8 +88,14 @@ iframe {
 }
 
 div.editor-footer {
-    padding: 5px;
+    padding: 10px;
     background-color: rgb(11,0,0);
+    display: flex;
+    justify-content: space-between;
+}
+
+#run-js {
+    display: none;
 }
 
 input#html-selected:checked ~ div.editors textarea#css-editor,
@@ -97,30 +103,36 @@ input#html-selected:checked ~ div.editors textarea#js-editor,
 input#html-selected:checked ~ div.editors textarea#script-editor,
 input#html-selected:checked ~ div.editors textarea#link-editor { display: none; }
 input#html-selected:checked ~ div.editors textarea#html-editor{ display: flex; }
+input#html-selected:checked ~ div.editor-footer span#run-js {display:none;}
 
 input#css-selected:checked ~ div.editors textarea#html-editor,
 input#css-selected:checked ~ div.editors textarea#js-editor,
 input#css-selected:checked ~ div.editors textarea#script-editor,
 input#css-selected:checked ~ div.editors textarea#link-editor { display: none; }
 input#css-selected:checked ~ div.editors textarea#css-editor{ display: flex; }
+input#css-selected:checked ~ div.editor-footer span#run-js {display:none;}
 
 input#js-selected:checked ~ div.editors textarea#css-editor,
 input#js-selected:checked ~ div.editors textarea#html-editor,
 input#js-selected:checked ~ div.editors textarea#script-editor,
 input#js-selected:checked ~ div.editors textarea#link-editor { display: none; }
 input#js-selected:checked ~ div.editors textarea#js-editor{ display: flex; }
+input#js-selected:checked ~ div.editor-footer span#run-js {display:flex;}
+
 
 input#link-selected:checked ~ div.editors textarea#css-editor,
 input#link-selected:checked ~ div.editors textarea#js-editor,
 input#link-selected:checked ~ div.editors textarea#script-editor,
 input#link-selected:checked ~ div.editors textarea#html-editor { display: none; }
 input#link-selected:checked ~ div.editors textarea#link-editor{ display: flex; }
+input#link-selected:checked ~ div.editor-footer span#run-js {display:none;}
 
 input#script-selected:checked ~ div.editors textarea#css-editor,
 input#script-selected:checked ~ div.editors textarea#js-editor,
 input#script-selected:checked ~ div.editors textarea#html-editor,
 input#script-selected:checked ~ div.editors textarea#link-editor { display: none; }
 input#script-selected:checked ~ div.editors textarea#script-editor{ display: flex; }
+input#script-selected:checked ~ div.editor-footer span#run-js {display:none;}
 
 input#html-selected:checked ~ div.editor-header label[for="html-selected"],
 input#css-selected:checked ~ div.editor-header label[for="css-selected"],

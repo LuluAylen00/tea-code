@@ -42,14 +42,17 @@
                 <textarea class="editor" name="script-editor" id="script-editor" placeholder='<script type="text/javascript" src="...."></script>'></textarea>
             </div>
             <div class="editor-footer">
-                <input type="file" id="folder" webkitdirectory directory multiple class="dn"/>
-                <label for="folder"><i class="fas fa-upload"></i> Cargar carpeta public</label>
-                <span id="info-cont">
-                    <i id="fa-info-circle" class="fas fa-info-circle"></i>
-                    <span>
-                        <p>Nota: la carpeta no se subirá al sitio, se alojará de forma temporal en el navegador y se eliminará al cerrar el navegador</p>
+                <div>
+                    <input type="file" id="folder" webkitdirectory directory multiple class="dn"/>
+                    <label for="folder"><i class="fas fa-upload"></i> Cargar carpeta public</label>
+                    <span id="info-cont">
+                        <i id="fa-info-circle" class="fas fa-info-circle"></i>
+                        <span>
+                            <p>Nota: la carpeta no se subirá al sitio, se alojará de forma temporal en el navegador y se eliminará al cerrar el navegador</p>
+                        </span>
                     </span>
-                </span>
+                </div>
+                <span id="run-js">Ejecutar >>></span>
             </div>
         </section>
         <iframe id="results"></iframe>
