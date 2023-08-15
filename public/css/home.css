@@ -2,6 +2,11 @@
     display: none;
 }
 
+:root {
+    --red: #d0cece;
+    --black: #0e0000;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -98,40 +103,81 @@ div.editor-footer {
     display: none;
 }
 
-input#html-selected:checked ~ div.editors textarea#css-editor,
-input#html-selected:checked ~ div.editors textarea#js-editor,
-input#html-selected:checked ~ div.editors textarea#script-editor,
-input#html-selected:checked ~ div.editors textarea#link-editor { display: none; }
-input#html-selected:checked ~ div.editors textarea#html-editor{ display: flex; }
+.editor { 
+    position: relative;
+    tab-size: 4;
+    resize: none;
+    width: 96%;
+    padding: 10px 10px 10px 20px;
+    color: snow;
+    background-color: rgb(11, 0, 0);
+    border-radius: 0;
+    outline: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body div.CodeMirror {
+    width: 94%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    position: absolute;
+}
+
+div.CodeMirror-gutter-elt {
+    position: fixed;
+    padding-left: 10px;
+}
+
+div.cm-s-material.CodeMirror {
+    background-color: rgb(11, 0, 0);
+}
+
+div.CodeMirror-gutters {
+    display: none;
+}
+/* .CodeMirror-cursors {
+    margin-left: 35px;
+  }
+
+body div.CodeMirror .CodeMirror-line {
+    margin-left: 35px;
+} */
+
+input#html-selected:checked ~ div.editors #css-editor,
+input#html-selected:checked ~ div.editors #js-editor,
+input#html-selected:checked ~ div.editors #script-editor,
+input#html-selected:checked ~ div.editors #link-editor { display: none; }
+input#html-selected:checked ~ div.editors #html-editor{ display: flex; }
 input#html-selected:checked ~ div.editor-footer span#run-js {display:none;}
 
-input#css-selected:checked ~ div.editors textarea#html-editor,
-input#css-selected:checked ~ div.editors textarea#js-editor,
-input#css-selected:checked ~ div.editors textarea#script-editor,
-input#css-selected:checked ~ div.editors textarea#link-editor { display: none; }
-input#css-selected:checked ~ div.editors textarea#css-editor{ display: flex; }
+input#css-selected:checked ~ div.editors #html-editor,
+input#css-selected:checked ~ div.editors #js-editor,
+input#css-selected:checked ~ div.editors #script-editor,
+input#css-selected:checked ~ div.editors #link-editor { display: none; }
+input#css-selected:checked ~ div.editors #css-editor{ display: flex; }
 input#css-selected:checked ~ div.editor-footer span#run-js {display:none;}
 
-input#js-selected:checked ~ div.editors textarea#css-editor,
-input#js-selected:checked ~ div.editors textarea#html-editor,
-input#js-selected:checked ~ div.editors textarea#script-editor,
-input#js-selected:checked ~ div.editors textarea#link-editor { display: none; }
-input#js-selected:checked ~ div.editors textarea#js-editor{ display: flex; }
+input#js-selected:checked ~ div.editors #css-editor,
+input#js-selected:checked ~ div.editors #html-editor,
+input#js-selected:checked ~ div.editors #script-editor,
+input#js-selected:checked ~ div.editors #link-editor { display: none; }
+input#js-selected:checked ~ div.editors #js-editor{ display: flex; }
 input#js-selected:checked ~ div.editor-footer span#run-js {display:flex;}
 
 
-input#link-selected:checked ~ div.editors textarea#css-editor,
-input#link-selected:checked ~ div.editors textarea#js-editor,
-input#link-selected:checked ~ div.editors textarea#script-editor,
-input#link-selected:checked ~ div.editors textarea#html-editor { display: none; }
-input#link-selected:checked ~ div.editors textarea#link-editor{ display: flex; }
+input#link-selected:checked ~ div.editors #css-editor,
+input#link-selected:checked ~ div.editors #js-editor,
+input#link-selected:checked ~ div.editors #script-editor,
+input#link-selected:checked ~ div.editors #html-editor { display: none; }
+input#link-selected:checked ~ div.editors #link-editor{ display: flex; }
 input#link-selected:checked ~ div.editor-footer span#run-js {display:none;}
 
-input#script-selected:checked ~ div.editors textarea#css-editor,
-input#script-selected:checked ~ div.editors textarea#js-editor,
-input#script-selected:checked ~ div.editors textarea#html-editor,
-input#script-selected:checked ~ div.editors textarea#link-editor { display: none; }
-input#script-selected:checked ~ div.editors textarea#script-editor{ display: flex; }
+input#script-selected:checked ~ div.editors #css-editor,
+input#script-selected:checked ~ div.editors #js-editor,
+input#script-selected:checked ~ div.editors #html-editor,
+input#script-selected:checked ~ div.editors #link-editor { display: none; }
+input#script-selected:checked ~ div.editors #script-editor{ display: flex; }
 input#script-selected:checked ~ div.editor-footer span#run-js {display:none;}
 
 input#html-selected:checked ~ div.editor-header label[for="html-selected"],
@@ -170,3 +216,91 @@ input#link-selected:checked ~ div.editor-header label[for="link-selected"]
     opacity: 1;
 }
 
+.player-list {
+    opacity: 0;
+    animation: fade-in 0.5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    overflow: hidden;
+}
+
+main.test {
+    flex-direction: column;
+}
+
+#editor-display {
+    height: 85%;
+    display: flex;
+}
+
+#navbarNavDropdown {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+header {
+    background-color: var(--black);
+    color: var(--red);
+    border-bottom: 1px solid;
+    font-size: 19px;
+    cursor: default;
+}
+
+header img {
+    width: 80px;
+}
+
+header ul {
+    justify-content: space-around;
+}
+
+header li#opt button {
+    padding: 5px;
+    border-radius: 40px;
+    font-weight: 500;
+    color: var(--red);
+    background-color: #630000;
+    border: 1px solid;
+    box-shadow: 0px 0px 4px;
+}
+
+main {
+    background-color: var(--black);
+}
+
+p {
+    margin: 0;
+}
+
+p.nav-link.dropdown-toggle, p.nav-link.dropdown-toggle.show, p.nav-link.dropdown-toggle:hover {
+    color: snow;
+}
+
+ul.navbar-nav {
+    align-items: center;
+}
+
+li.nav-item {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+}

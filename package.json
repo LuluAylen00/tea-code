@@ -20,9 +20,13 @@
   "homepage": "https://github.com/LuluAylen00/pokemart#readme",
   "dependencies": {
     "ejs": "^3.1.8",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "socket.io": "4.6.1"
   },
   "devDependencies": {
+    "@babel/cli": "7.21.5",
+    "@babel/core": "7.21.5",
+    "@babel/preset-env": "7.21.5",
     "nodemon": "^2.0.19"
   }
 }
