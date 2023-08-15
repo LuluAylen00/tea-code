@@ -17,6 +17,8 @@ const io = new Server(server);
 // let spectList = [];
 // let boardList = [];
 
+fs.writeFileSync(join(__dirname,'./models/data.json'), JSON.stringify({ messages:[], connectedList:[], spectList:[], boardList:[] }));
+
 let { messages, connectedList, spectList, boardList } = JSON.parse(fs.readFileSync(join(__dirname,'./models/data.json')))
 
 function save() {
