@@ -1,5 +1,6 @@
 const express = require('express');
 const {join, resolve} = require('path');
+const fs = require('fs');
 const app = express();
 
 const port = process.env.PORT || 3418;
@@ -11,10 +12,16 @@ server.listen(port)
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-let messages = [];
-let connectedList = [];
-let spectList = [];
-let boardList = [];
+// let messages = [];
+// let connectedList = [];
+// let spectList = [];
+// let boardList = [];
+
+let { messages, connectedList, spectList, boardList } = JSON.parse(fs.readFileSync(join(__dirname,'./models/data.json')))
+
+function save() {
+    fs.writeFileSync(join(__dirname,'./models/data.json'), JSON.stringify({ messages, connectedList, spectList, boardList }));
+}
 
 function filterBoards() {
     boardList = boardList.filter(board => {
@@ -54,7 +61,8 @@ io.on('connection', async (socket) => {
             name: data,
             role: "spect"
         });
-        // console.log('Un usuario se ha conectado');
+        save()
+
         console.log(data, "se ha conectado");
         // console.log("Se encuentran conectados:", connectedList);
         io.sockets.emit("connected-list", connectedList);
@@ -63,12 +71,15 @@ io.on('connection', async (socket) => {
     socket.on("new-spect", function () {
         filterBoards();
         spectList.push({id: socket.id});
+        save()
         console.log("Un nuevo espectador se ha conectado ("+spectList.length+" en total)");
         io.sockets.emit("spect-list", spectList);
     });
 
     socket.on("new-board", function (data) {
         filterBoards();
+        console.log("connected-list", connectedList);
+        console.log(data);
         boardList.push({
             id: boardList[0] ? boardList[0].id+1 : 1,
             title: data.title,
@@ -85,6 +96,7 @@ io.on('connection', async (socket) => {
                 link: ""
             }
         })
+        save()
         console.log(data.name+" ha creado un tablero ("+boardList.length+" en total)");
         io.sockets.emit("board-list", boardList);
     })
@@ -98,6 +110,7 @@ io.on('connection', async (socket) => {
                 b = board
             }
         })
+        save()
         io.sockets.emit("board-list", boardList);
         io.sockets.emit("updated", {board: b, editor: body.editor})
     })
@@ -105,6 +118,7 @@ io.on('connection', async (socket) => {
     socket.on('delete-board', function (data) {
         filterBoards();
         boardList = boardList.filter(b => b.id != data);
+        save()
         io.sockets.emit("board-list", boardList);
     })
 
@@ -115,6 +129,7 @@ io.on('connection', async (socket) => {
                 board.mods = [...board.mods, data.user.id]
             }
         })
+        save()
         console.log(`${data.user.name} ahora modera el tablero en ${data.boardId}`)
     })
 
@@ -125,6 +140,7 @@ io.on('connection', async (socket) => {
                 board.mods = board.mods.filter((mod) => mod != data.user.id)
             }
         })
+        save()
         console.log(`${data.user.name} ahora ya no modera el tablero ${data.boardId}`)
     })
 
@@ -135,6 +151,7 @@ io.on('connection', async (socket) => {
                 board.editors = [...board.editors, data.user.id]
             }
         })
+        save()
         console.log(`${data.user.name} ahora tiene permisos de editar en ${data.boardId}`)
     })
 
@@ -145,18 +162,21 @@ io.on('connection', async (socket) => {
                 board.editors = board.editors.filter((editor) => editor != data.user.id)
             }
         })
+        save()
         console.log(`${data.user.name} ahora ya no tiene permiso de editar en ${data.boardId}`)
     })
 
     socket.on("new-message", function (data) {
         filterBoards();
         messages.push(data)
+        save()
         io.sockets.emit("messages", messages);
     });
 
     socket.on("unconnecting", function (data) {
         filterBoards();
         connectedList = connectedList.filter(p => p.name != data);
+        save()
         console.log(data, "se ha desconectado");
         console.log("Se encuentran conectados:", connectedList);
         // io.sockets.emit('unconnect', data);
@@ -167,6 +187,7 @@ io.on('connection', async (socket) => {
         filterBoards();
         connectedList = connectedList.filter(p => p.id != socket.id);
         spectList = spectList.filter(p => p.id != socket.id);
+        save()
         io.sockets.emit("connected-list", connectedList);
         io.sockets.emit("spect-list", spectList);
         console.log("alguien se ha ido");

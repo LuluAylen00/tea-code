@@ -22,17 +22,17 @@ window.addEventListener('load',() => {
 
     socket.on('connected-list', (data) => {
         renderPlayers(data);
-        console.log("players",data);
+        // console.log("players",data);
     })
     
     socket.on('spect-list', (data) => {
         renderSpects(data);
-        console.log("spectators",data);
+        // console.log("spectators",data);
     })
 
     socket.on('board-list', (data) => {
         renderBoards(data);
-        console.log("boards",data);
+        // console.log("boards",data);
     })
 
     
@@ -75,10 +75,12 @@ window.addEventListener('load',() => {
                     }).then((result) => {
                         // console.log(result);
                         // console.log("asdasdasdasd", valor, result);
+                        console.log(socket.id);
                         socket.emit("new-board", {
                             id: socket.id,
                             title: valor.value,
                             password: result.value || null
+                            // owner: playerList.find(p => p.id == socket.id)
                         });
                     })
                 }
@@ -181,8 +183,8 @@ window.addEventListener('load',() => {
                 let runJs = document.getElementById("run-js");
                 let resultsIframe = document.getElementById("results");
 
-                console.log("includes", b.editors.includes(socket.id));
-                console.log("owner", b.owner.id == socket.id);
+                // console.log("includes", b.editors.includes(socket.id));
+                // console.log("owner", b.owner.id == socket.id);
                 let code = getters(b.editors.includes(socket.id) || b.owner.id == socket.id);
 
                 // editorContainer.style.display = 'none';
@@ -314,7 +316,7 @@ window.addEventListener('load',() => {
                 render();
 
                 socket.on('updated', (data) =>{
-                    console.log(data);
+                    // console.log(data);
                     if (data.editor != socket.id) {
                         tags = {
                             headOpener: "<head>",
@@ -480,7 +482,7 @@ window.addEventListener('load',() => {
         // allowOutsideClick: false
     }).then((result) => {
         if (result.isConfirmed) {
-            console.log("socket",socket);
+            // console.log("socket",socket);
             socket.emit("new-connected", sessionStorage.getItem("user"));
             displayOpt();
         } else {
