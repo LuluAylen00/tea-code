@@ -204,7 +204,7 @@ window.addEventListener('load',() => {
                     html: b.code.html,
                     mainCloser: "</main>",
                     styleOpener: "<style>",
-                    css: b.code.css || `body {\n\tbackground-color: #151416;\n}`,
+                    css: b.code.css || `body {\n\tbackground-color: #151416;\n\tcolor: snow;\n}`,
                     styleCloser: "</style>",
                     scriptOpener: "<script>",
                     js: b.code.js,

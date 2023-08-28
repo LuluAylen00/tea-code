@@ -265,7 +265,7 @@ header {
 }
 
 header img {
-    width: 80px;
+    width: 135px;
 }
 
 header ul {
@@ -277,7 +277,7 @@ header li#opt button {
     border-radius: 40px;
     font-weight: 500;
     color: var(--red);
-    background-color: #630000;
+    background-color: #990000;
     border: 1px solid;
     box-shadow: 0px 0px 4px;
 }

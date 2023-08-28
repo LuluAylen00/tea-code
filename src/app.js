@@ -22,7 +22,7 @@ fs.writeFileSync(join(__dirname,'./models/data.json'), JSON.stringify({ messages
 let { messages, connectedList, spectList, boardList } = JSON.parse(fs.readFileSync(join(__dirname,'./models/data.json')))
 
 function save() {
-    fs.writeFileSync(join(__dirname,'./models/data.json'), JSON.stringify({ messages, connectedList, spectList, boardList }));
+    fs.writeFileSync(join(__dirname,'./models/data.json'), JSON.stringify({ messages, connectedList, spectList, boardList }, null, 2));
 }
 
 function filterBoards() {

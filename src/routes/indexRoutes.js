@@ -8,4 +8,8 @@ app.get('/test', (req, res) => {
     res.render('waiting')
 })
 
+app.get('/puerta', (req,res) => {
+    // res.render('puerta')
+})
+
 module.exports = app;
